@@ -1,0 +1,54 @@
+<!-- <%
+
+user = typeof user!=='undefined'? user: 'bel(le) inconnu(e)';
+
+%> -->
+<% 
+    let displayName = "bel(le) inconnu(e)";
+
+    if(typeof user!== 'undefined' && user){
+        if(sex === "F"){
+            displayName= "Mme " + user;
+        } else if(sex === "M") {
+            displayName = "Mr " + user;
+        } else {
+            displayName = user;
+        }
+    } else if(sex === "F"){
+        displayName = "belle inconnue";
+    } else if(sex === "M"){
+        displayName = "bel inconnu";
+    }        
+%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Test EJS</title>
+</head>
+<body>
+    <p>Le serveur Express dit bonjour EJS!!!</p>
+    <h1>
+        Hello  
+        
+        <%= displayName %>
+        <!-- <% if(typeof user !== 'undefined'){ %>
+            if(typeof sex=='F'){
+                belle inconnue
+        <% } else if(typeof sex !=='F') {%>
+            bel inconnu
+        <%} else {%>
+            bel(le) inconnu(e)
+        <%} %> -->
+
+        <!-- <% if(typeof user !== 'undefined'){ %>
+            <%= user %>
+        <% } else {%>
+            bel(le) inconnu(e)
+        <%} %> -->
+    
+    </h1>
+</body>
+</html>

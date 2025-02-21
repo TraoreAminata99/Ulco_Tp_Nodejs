@@ -1,0 +1,22 @@
+<% 
+    let displayName = "bel(le) inconnu(e)";
+
+    if(typeof user!== 'undefined' && user){
+        if(sex === "F"){
+            displayName= "Mme " + user;
+        } else if(sex === "M") {
+            displayName = "Mr " + user;
+        } else {
+            displayName = user;
+        }
+    } else if(sex === "F"){
+        displayName = "belle inconnue";
+    } else if(sex === "M"){
+        displayName = "bel inconnu";
+    }        
+%>
+
+<p>Le serveur Express dit bonjour EJS!!!</p>
+<h1>
+    Hello   <%= displayName %>
+</h1>

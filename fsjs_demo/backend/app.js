@@ -11,14 +11,15 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use((req,res,next) => {
     const now = new Date().toDateString();
-    console.log(`${now} : une requête ${req.methode} est arrivée !` );
+    console.log(`${now} : une requête ${req.method} est arrivée !` );
     next();
 });
 
 app.use((req,res)=>{
-    const user = req.query.nickname || undefined;
-    const sex = req.query.sex || undefined;
-
+    // const user = req.query.nickname || undefined;
+    // const sex = req.query.sex || undefined;
+    const user = "Nickname";
+    const sex = "F"
     res.render('pages/home',{user, sex});
 });
 

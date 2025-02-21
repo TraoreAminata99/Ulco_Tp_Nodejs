@@ -1,0 +1,55 @@
+<!-- <%- include('../partials/head') %>
+
+<% user= typeof user !== 'undefined' ? user: 'bel(le) inconnu(e)'; %>
+
+<p>Ceci est ma première page en EJS !</p>
+
+<h1>Bonjour <%= user %> </h1>
+
+<%- include('../partials/foot') %> -->
+
+<!-- <%
+
+user = typeof user!=='undefined'? user: 'bel(le) inconnu(e)';
+
+%> -->
+<% 
+    let displayName = "bel(le) inconnu(e)";
+
+    if(typeof user!== 'undefined' && user){
+        if(sex === "F"){
+            displayName= "Mme " + user;
+        } else if(sex === "M") {
+            displayName = "Mr " + user;
+        } else {
+            displayName = user;
+        }
+    } else if(sex === "F"){
+        displayName = "belle inconnue";
+    } else if(sex === "M"){
+        displayName = "bel inconnu";
+    }        
+%>
+<%- include('../partials/head') %>
+    <p>Le serveur Express dit bonjour EJS!!!</p>
+    <h1>
+        Hello  
+        
+        <%= displayName %>
+        <!-- <% if(typeof user !== 'undefined'){ %>
+            if(typeof sex=='F'){
+                belle inconnue
+        <% } else if(typeof sex !=='F') {%>
+            bel inconnu
+        <%} else {%>
+            bel(le) inconnu(e)
+        <%} %> -->
+
+        <!-- <% if(typeof user !== 'undefined'){ %>
+            <%= user %>
+        <% } else {%>
+            bel(le) inconnu(e)
+        <%} %> -->
+    
+    </h1>
+<%- include('../partials/foot') %>
